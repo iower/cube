@@ -39,19 +39,19 @@ p {
   transition: 0.5s linear all;
 }
 
-.screen1.reduced {
-  transform: translateX(50%);
-}
-
-.screen2 {
+.screen.prev {
   transform: translateX(-50%);
 }
 
-.screen2.reduced {
+.screen.current {
   transform: translateX(0%);
 }
 
-.inner {
+.screen.next {
+  transform: translateX(50%);
+}
+
+.screen .inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -61,25 +61,25 @@ p {
   transition: 0.5s linear all;
 }
 
-.inner1 {
-  transform: perspective(1000px) rotateY(0deg) scaleY(1) scaleX(1);
-}
-
-.inner1.reduced {
-	transform: perspective(1000px) rotateY(90deg) scaleY(1) scaleX(0) translateX(100%);
-}
-
-.inner2 {
+.screen.prev .inner {
   transform: perspective(1000px) rotateY(-90deg) scaleY(1) scaleX(0) translateX(-100%);
 }
 
-.inner2.reduced {
+.screen.current .inner {
 	transform: perspective(1000px) rotateY(0deg) scaleY(1) scaleX(1) translateX(0%);
+}
+
+.screen.next .inner {
+	transform: perspective(1000px) rotateY(90deg) scaleY(1) scaleX(0) translateX(100%);
 }
 
 .text {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+p {
+  text-align: left;
 }
 
 .buttons {
